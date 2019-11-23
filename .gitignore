@@ -1,0 +1,15 @@
+*.storybook
+.heroku-deployment
+.cache
+
+node_modules
+*.log
+.idea
+.vscode
+test-reports
+dependency-reports
+
+.DS_Store
+.docker-compose.yml.swp
+dist
+dist-internal
