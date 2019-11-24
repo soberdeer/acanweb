@@ -1,4 +1,3 @@
-import oc from 'open-color';
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({

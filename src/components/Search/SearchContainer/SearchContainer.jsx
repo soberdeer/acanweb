@@ -32,6 +32,7 @@ export default function SearchContainer({ data }) {
         type="undefined"
         style={{ minWidth: 400 }}
         onKeyDown={onKeyDown}
+        data={data}
       />
 
       <div className={classes.groupsContainer}>
@@ -46,6 +47,6 @@ SearchContainer.propTypes = {
 };
 
 SearchContainer.defaultProps = {
-  data: null,
+  data: [],
 };
 
