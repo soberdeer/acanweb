@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import Item from '../../Item/Item/Item';
+import Item from '../../items/Item/Item';
 import Search from '../Search/Search';
 import useStyles from './SearchContainer.styles';
 
@@ -20,6 +20,7 @@ export default function SearchContainer({ data }) {
         key={group.group_name}
         icon={group.group_name === 'Консервы' ? 'Canned' : 'Cured'}
         title={group.group_name}
+        size={70}
       />
     ));
 

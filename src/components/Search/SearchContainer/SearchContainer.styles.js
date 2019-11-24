@@ -5,6 +5,7 @@ export default createUseStyles({
   searchContainer: {
     width: '100%',
     height: '100%',
+    minHeight: 300,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -15,5 +16,9 @@ export default createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '& > div + div': {
+      marginLeft: 10,
+      marginTop: 10,
+    }
   },
 });

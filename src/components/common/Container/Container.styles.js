@@ -1,5 +1,6 @@
 import oc from 'open-color';
 import { createUseStyles } from 'react-jss';
+import linear from '../../../../utils/linear';
 
 export default createUseStyles({
   container: {
@@ -10,7 +11,7 @@ export default createUseStyles({
 
   nav: {
     width: 'calc(100% - 60px)',
-    background: 'linear-gradient(313deg, rgba(30,214,193,1) 0%, rgba(150,145,242,1) 100%)',
+    background: linear('rgba(30,214,193,1)', 'rgba(150,145,242,1)'),
     backgroundColor: oc.gray[7],
     height: 50,
     padding: [0, 30],
