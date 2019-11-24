@@ -6,7 +6,6 @@ export default function SearchContainer() {
 
   function onKeyDown(e) {
     if (keycode(e) === 'enter') {
-      console.log('x');
     }
   }
 
