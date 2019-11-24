@@ -6,11 +6,10 @@ import {
   Link,
 } from 'react-router-dom';
 import getData from '../utils/getData';
-import SearchContainer from './components/Search/SearchContainer';
-import useStyles from './App.styles';
+import Container from './components/common/Container/Container';
+import SearchContainer from './components/Search/SearchContainer/SearchContainer';
 
 export default function App() {
-  const classes = useStyles();
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -21,11 +20,13 @@ export default function App() {
 
   return (
     <Router>
-      <Switch>
-        <Route path="/">
-          <SearchContainer data={data} />
-        </Route>
-      </Switch>
+      <Container>
+        <Switch>
+          <Route path="/">
+            <SearchContainer data={data} />
+          </Route>
+        </Switch>
+      </Container>
     </Router>
   );
 }
