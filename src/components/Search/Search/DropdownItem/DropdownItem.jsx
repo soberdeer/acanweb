@@ -11,7 +11,7 @@ export default function DropdownItem({ foundObject, onClick }) {
     <button
       className={classes.dropdownItem}
       type="button"
-
+      onClick={onClick}
     >
       <Highlight
         match={foundObject.matches.find(match => match.key === 'name')}

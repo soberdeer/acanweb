@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import oc from 'open-color';
-import highlighter from '../../../../../utils/highlighter';
+import highlighter from '../../../../utils/highlighter';
 
 export default function Highlight({ children, item, match, ...others }) {
   const { start, end, highlight } = match.indices ? highlighter(children, match.indices[0]) : { start: children };

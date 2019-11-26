@@ -8,21 +8,14 @@ import DropdownItem from './DropdownItem/DropdownItem';
 import useStyles from './Search.styles';
 
 export default function Search({
-  component: Element,
-  className,
-  type,
   disabled,
   error,
-  fixedHeight,
-  chevronPosition,
-  inputClassName,
   data,
   ...others
 }) {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
-  const [foundValues, setValues] = useState([]);
 
   const itemNames = !data ?
     [] :
@@ -66,30 +59,24 @@ export default function Search({
 
   const selectItems = searchTerm.length > 1 ?
     getFuse().slice(0, 10).map((value, index) => (
-      <DropdownItem key={index} foundObject={value} />
-    )) :
-    <div>Nothing found</div>;
+      <DropdownItem key={index} foundObject={value} />)) : [];
 
   return (
-    <div className={cx(classes.wrapper, classes[chevronPosition], className)}>
-      <Element
+    <div className={classes.wrapper}>
+      <input
         {...others}
-        type={type}
         disabled={disabled}
         value={searchTerm}
-        className={cx(
-          classes.input,
-          {
-            [classes.error]: error,
-            [classes.fixedHeight]: fixedHeight,
-            [classes.buttonType]: type === 'button',
-          },
-          inputClassName,
-        )}
+        className={cx(classes.input, { [classes.error]: error })}
         onChange={onChange}
       />
-      <SearchIcon className={classes.chevron} size={18} />
-      <SelectDropdown opened={searchTerm !== ''} onSearchTermChange={setSearchTerm} onClose={closeDropdown}>
+      <SearchIcon className={classes.searchIcon} size={18} />
+      <SelectDropdown
+        opened={showDropdown}
+        onSearchTermChange={setSearchTerm}
+        onClose={closeDropdown}
+        nothingFound={selectItems.length === 0}
+      >
         <div>
           {selectItems}
         </div>
@@ -100,14 +87,8 @@ export default function Search({
 
 
 Search.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]).isRequired,
-  className: PropTypes.string,
-  type: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   error: PropTypes.bool,
-  fixedHeight: PropTypes.bool,
-  chevronPosition: PropTypes.oneOf(['up', 'down']),
-  inputClassName: PropTypes.string,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       group_name: PropTypes.string,
@@ -127,10 +108,6 @@ Search.propTypes = {
 };
 
 Search.defaultProps = {
-  className: null,
   disabled: false,
   error: false,
-  fixedHeight: true,
-  chevronPosition: 'down',
-  inputClassName: null,
 };

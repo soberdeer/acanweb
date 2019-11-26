@@ -18,26 +18,26 @@ export default function SearchContainer({ data }) {
     data.map(group => (
       <Item
         key={group.group_name}
-        icon={group.group_name === 'Консервы' ? 'Canned' : 'Cured'}
+        icon={group.group_name === 'Консервы' ? 'canned' : 'cured'}
         title={group.group_name}
+        link={group.group_name === 'Консервы' ? 'canned' : '/cured'}
         size={70}
       />
     ));
 
   return (
     <div className={classes.searchContainer}>
+      <div className={classes.groupsContainer}>
+        {groups}
+      </div>
+
       <Search
         placeholder="Введите код продукции"
-        component="input"
-        type="undefined"
         style={{ minWidth: 400 }}
         onKeyDown={onKeyDown}
         data={data}
       />
 
-      <div className={classes.groupsContainer}>
-        {groups}
-      </div>
     </div>
   );
 }

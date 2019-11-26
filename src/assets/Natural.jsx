@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Logo({ size, ...others }) {
+export default function Natural({ size, ...others }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453.37 350.67" height={size} {...others}>
       <path
@@ -63,11 +63,11 @@ export default function Logo({ size, ...others }) {
   );
 }
 
-Logo.propTypes = {
+Natural.propTypes = {
   size: PropTypes.number,
 };
 
-Logo.defaultProps = {
+Natural.defaultProps = {
   size: 18,
 };
 

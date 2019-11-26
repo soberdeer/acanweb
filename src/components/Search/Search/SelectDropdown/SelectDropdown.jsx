@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { isEventKey } from 'keycode';
 import Scrollbars from 'react-custom-scrollbars';
-import useClickOutside from '../../../../../utils/useClickOutside';
+import useClickOutside from '../../../../utils/useClickOutside';
 import { CSSTransition } from 'react-transition-group';
 import useStyles, { TRANSITION_DURATION } from './SelectDropdown.styles';
 
@@ -15,7 +15,6 @@ export default function SelectDropdown({
   showSearch,
   searchPlaceholder,
   nothingFound,
-  nothingFoundMessage,
 }) {
   const wrapperRef = useRef(null);
   const classes = useStyles();
@@ -50,7 +49,7 @@ export default function SelectDropdown({
         <Scrollbars autoHeight autoHeightMax={200}>
           {nothingFound ? (
             <div className={classes.nothingFound}>
-              {nothingFoundMessage}
+              Ничего не найдено
             </div>
           ) : (
             children
@@ -70,7 +69,6 @@ SelectDropdown.propTypes = {
   showSearch: PropTypes.bool,
   searchPlaceholder: PropTypes.string,
   nothingFound: PropTypes.bool,
-  nothingFoundMessage: PropTypes.string,
 };
 
 SelectDropdown.defaultProps = {
@@ -79,5 +77,4 @@ SelectDropdown.defaultProps = {
   showSearch: false,
   searchPlaceholder: '',
   nothingFound: false,
-  nothingFoundMessage: '',
 };

@@ -6,7 +6,7 @@ export default createUseStyles({
     position: 'relative',
 
     '&:focus-within': {
-      '& $chevron': {
+      '& $searchIcon': {
         opacity: 1,
       },
     },
@@ -24,16 +24,11 @@ export default createUseStyles({
     padding: [8, 10],
     color: oc.gray[9],
     outline: 0,
-    transition: 'box-shadow 100ms ease, border-color 100ms ease',
+    transition: 'border-color 100ms ease, border-bottom-right-radius 100ms ease, border-bottom-left-radius 100ms ease',
     resize: 'none',
     minHeight: 34,
+    height: 34,
     textAlign: 'left',
-
-    '&:focus': {
-      borderColor: 'transparent',
-      outline: 0,
-      boxShadow: `0 0 0 2px ${oc.indigo[3]}`,
-    },
 
     '&::placeholder': {
       color: oc.gray[5],
@@ -47,10 +42,6 @@ export default createUseStyles({
     },
   },
 
-  fixedHeight: {
-    height: 34,
-  },
-
   error: {
     borderColor: oc.red[5],
     color: oc.red[7],
@@ -61,17 +52,7 @@ export default createUseStyles({
     },
   },
 
-  buttonType: {
-    cursor: 'pointer',
-  },
-
-  up: {
-    '& $chevron': {
-      transform: 'rotate(180deg)',
-    },
-  },
-
-  chevron: {
+  searchIcon: {
     position: 'absolute',
     top: 8,
     right: 10,

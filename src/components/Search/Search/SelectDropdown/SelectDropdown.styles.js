@@ -32,48 +32,10 @@ export default createUseStyles({
 
   search: {
     position: 'relative',
-
-    '&:focus-within': {
-      '& $searchIcon': {
-        opacity: 0.8,
-      },
-    },
-  },
-
-  searchInput: {
-    boxSizing: 'border-box',
-    border: 0,
-    borderBottom: `1px solid ${oc.gray[3]}`,
-    width: '100%',
-    height: 38,
-    paddingLeft: 10,
-    paddingRight: 10,
-    outline: 0,
-    borderTopRightRadius: 2,
-    borderTopLeftRadius: 2,
-
-    '&:focus': {
-      borderBottomColor: oc.indigo[5],
-    },
-
-    '&::placeholder': {
-      color: oc.gray[5],
-    },
-  },
-
-  searchIcon: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
-    color: oc.gray[5],
-    opacity: 0.5,
-    transition: 'opacity 100ms ease',
-    pointerEvents: 'none',
   },
 
   nothingFound: {
-    paddingTop: 10,
-    paddingBottom: 10,
+    padding: 5,
     color: oc.gray[5],
   },
 

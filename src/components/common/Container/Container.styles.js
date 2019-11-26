@@ -1,6 +1,6 @@
 import oc from 'open-color';
 import { createUseStyles } from 'react-jss';
-import linear from '../../../../utils/linear';
+import linear from '../../../utils/linear';
 
 export default createUseStyles({
   container: {

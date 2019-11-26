@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import icons from '../../../assets';
 import useStyles from './Container.styles';
 
@@ -9,15 +10,16 @@ export default function Container({ children }) {
   return (
     <div className={classes.container}>
       <div className={classes.nav}>
-        <icons.Logo size={40} />
+        <Link to="/" className={classes.link}>
+          <icons.natural size={40} />
+        </Link>
         <div className={classes.links}>
-          <a
+          <Link
             className={classes.link}
-            href="#"
-            target="_self"
+            to="/"
           >
             Link
-          </a>
+          </Link>
         </div>
       </div>
       {children}

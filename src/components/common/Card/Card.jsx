@@ -15,7 +15,7 @@ export default function Card({
 }) {
   const classes = useStyles();
   const { className, ...rest } = componentProps || {};
-  const Icon = icon ? icons[icon] : null;
+  const Icon = icons[icon] || icons.natural;
 
   return (
     <div className={cx(classes.wrapper, componentClassName)} {...others}>

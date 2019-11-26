@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { subgroupThemes } from '../../../../utils/constants';
+import { mappedSubgroupTheme } from '../../../utils/constants';
 import useStyles from './Label.styles';
 
 export default function Label({ name, ...others }) {
@@ -10,7 +10,7 @@ export default function Label({ name, ...others }) {
     <div
       className={classes.label}
       style={{
-        ...subgroupThemes[name],
+        ...mappedSubgroupTheme[name],
       }}
       {...others}
     >
