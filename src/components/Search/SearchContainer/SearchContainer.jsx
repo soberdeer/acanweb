@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
-import Item from '../../items/Item/Item';
+import ItemsContainer from '../../items/ItemsContainer/ItemsContainer';
 import Search from '../Search/Search';
 import useStyles from './SearchContainer.styles';
 
@@ -13,23 +13,16 @@ export default function SearchContainer({ data }) {
     }
   }
 
-  const groups = !data ?
-    [] :
-    data.map(group => (
-      <Item
-        key={group.group_name}
-        icon={group.group_name === 'Консервы' ? 'canned' : 'cured'}
-        title={group.group_name}
-        link={group.group_name === 'Консервы' ? 'canned' : '/cured'}
-        size={70}
-      />
-    ));
+  const groupsData = !data ? [] :
+    data.map(group => ({
+      name: group.group_name,
+      key: group.group_name === 'Консервы' ? 'canned' : 'cured',
+      link: group.group_name === 'Консервы' ? '/canned' : '/cured',
+    }));
 
   return (
     <div className={classes.searchContainer}>
-      <div className={classes.groupsContainer}>
-        {groups}
-      </div>
+      <ItemsContainer data={groupsData} className={classes.groupsContainer}/>
 
       <Search
         placeholder="Введите код продукции"

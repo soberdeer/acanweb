@@ -7,7 +7,9 @@ import {
 import getData from './utils/getData';
 import Container from './components/common/Container/Container';
 import SearchContainer from './components/Search/SearchContainer/SearchContainer';
-import ItemsContainer from './components/items/ItemsContainer/ItemsContainer';
+import GroupContainer from './components/GroupContainer/GroupContainer';
+import SubgroupContainer from './components/SubroupContainer/SubgroupContainer';
+import ItemIndex from './components/items/ItemIndex/ItemIndex';
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -26,7 +28,13 @@ export default function App() {
             <SearchContainer data={data} />
           </Route>
           <Route path="/:type" exact>
-            <ItemsContainer data={data}/>
+            <GroupContainer data={data}/>
+          </Route>
+          <Route path="/:type/:subtype" exact>
+            <SubgroupContainer data={data}/>
+          </Route>
+          <Route path="/:type/:subtype/:code" exact>
+            <ItemIndex data={data}/>
           </Route>
         </Switch>
       </Container>

@@ -10,8 +10,6 @@ export default createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
-    marginLeft: 'auto',
-    marginRight: 'auto',
   },
 
   groupsContainer: {
