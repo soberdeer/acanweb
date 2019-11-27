@@ -1,12 +1,15 @@
 {
   "name": "acanweb.github.io",
   "version": "1.0.0",
-  "description": "Search for true of canned fish",
+  "description": "Search for truth of canned fish",
+  "homepage": "https://github.com/soberdeer/acanweb.github.io",
   "main": "index.js",
   "scripts": {
     "test": "yarn test",
     "start": "webpack-dev-server --mode development --port 8090 --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "sober_deer",
   "license": "ISC",
@@ -21,6 +24,7 @@
     "css-loader": "^3.2.0",
     "file-loader": "^5.0.2",
     "fuse.js": "^3.4.6",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "keycode": "^2.2.0",
     "open-color": "^1.7.0",
