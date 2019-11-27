@@ -21,7 +21,7 @@ export default function Item({ icon, size, title, link, children, small, ...othe
     <Link to={link} className={classes.itemContainer} style={style} {...others}>
       <Component icon={!small ? icon : undefined} size={!small ? size : undefined} className={classes.card}>
         {title && (
-          <div className={classes.title}>
+          <div className={classes.title} style={{ textAlign: small ? 'left' : 'center' }}>
             {title}
           </div>
         )}

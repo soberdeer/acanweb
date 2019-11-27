@@ -24,6 +24,9 @@ export default function ItemsContainer({ data, small }) {
         style={{
           opacity,
           transitionDelay: `${index * 20}ms`,
+          width: small ? '100%' : 'unset',
+          display: small ? 'flex' : 'block',
+          justifyContent: 'center',
         }}
       />;
     });
