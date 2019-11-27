@@ -11,5 +11,3 @@ dependency-reports
 
 .DS_Store
 .docker-compose.yml.swp
-dist
-dist-internal
