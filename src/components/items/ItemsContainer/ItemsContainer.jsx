@@ -14,26 +14,28 @@ export default function ItemsContainer({ data, small }) {
   }, []);
 
   const items = data.map((item, index) => {
-      return <Item
-        key={index}
-        icon={item.key}
-        title={item.name}
-        link={item.link}
-        size={70}
-        small={small}
-        style={{
-          opacity,
-          transitionDelay: `${index * 20}ms`,
-          width: small ? '100%' : 'unset',
-          display: small ? 'flex' : 'block',
-          justifyContent: 'center',
-        }}
-      />;
-    });
+    return <Item
+      key={index}
+      icon={item.key}
+      title={item.name}
+      link={item.link}
+      size={70}
+      small={small}
+      style={{
+        opacity,
+        transitionDelay: `${index * 20}ms`,
+        width: small ? '60%' : 'unset',
+        display: small ? 'flex' : 'block',
+        justifyContent: 'center',
+      }}
+    />;
+  });
 
   return (
     <div className={classes.itemsContainer}>
-      <div className={classes.groupsContainer} style={{flexDirection: small ? 'column' : 'row'}}>
+      <div className={classes.groupsContainer} style={{
+        flexFlow: small ? 'column nowrap' : 'row wrap',
+      }}>
         {items}
       </div>
     </div>

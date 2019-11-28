@@ -25,7 +25,7 @@ export default function SubgroupContainer({ data }) {
       return {
         name: item.name,
         key: item.code,
-        link: `${type}/${subtype}/${item.code}`,
+        link: `/${type}/${subtype}/${item.code}`,
       }
     });
 

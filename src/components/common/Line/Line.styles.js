@@ -7,7 +7,7 @@ export default createUseStyles({
     boxShadow: '0 1px 2px 0 rgba(194,194,194,0.5)',
     borderRadius: 2,
     display: 'flex',
-    width: '60%',
+    width: '100%',
     flexDirection: 'column',
     justifyContent: 'center',
     padding: 10,

@@ -24,7 +24,7 @@ export default function SubgroupContainer({ data }) {
       return {
         name: subgroup.subgroup_name,
         key: subgroupKey,
-        link: `${type}/${subgroupKey}`,
+        link: `/${type}/${subgroupKey}`,
       }
     });
 

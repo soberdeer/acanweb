@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
-  container: {
+  itemsContainer: {
     width: '100%',
     height: 'calc(100% - 50px)',
     minHeight: 300,

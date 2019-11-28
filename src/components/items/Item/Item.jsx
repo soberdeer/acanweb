@@ -9,7 +9,7 @@ export default function Item({ icon, size, title, link, children, small, ...othe
   const classes = useStyles();
   const Component = small ? Line : Card;
   const style = small ? {
-    width: '100%',
+    width: '60%',
   } : {
     width: 150,
     height: 150,
