@@ -12,7 +12,7 @@ export default function SubgroupContainer({ data }) {
   const groupName = type === 'canned' ? 'Консервы' : 'Пресервы';
   const groupData = data ? data.find(group => groupName === group.group_name).group_data : null;
   const subgroupData = groupData ?
-    groupData.find(group => mappedSubgroupName[ subtype ] === group.subgroup_name).subgroup_data : null;
+    groupData.find(group => mappedSubgroupName[subtype] === group.subgroup_name).subgroup_data : null;
 
   function onKeyDown(e) {
     if (keycode(e) === 'enter') {
@@ -30,7 +30,9 @@ export default function SubgroupContainer({ data }) {
     });
 
   return (
-    <ItemsContainer data={subgroups} small />
+    <div className={classes.subgroupContainer}>
+      <ItemsContainer data={subgroups} small />
+    </div>
   );
 }
 

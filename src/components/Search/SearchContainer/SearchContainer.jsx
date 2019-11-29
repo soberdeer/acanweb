@@ -22,15 +22,18 @@ export default function SearchContainer({ data }) {
 
   return (
     <div className={classes.searchContainer}>
-      <ItemsContainer data={groupsData} className={classes.groupsContainer}/>
+      <div className={classes.inner}>
+        <ItemsContainer data={groupsData} className={classes.groupsContainer} />
 
-      <Search
-        placeholder="Введите код продукции"
-        style={{ minWidth: 400 }}
-        onKeyDown={onKeyDown}
-        data={data}
-      />
-
+        <Search
+          placeholder="Введите код продукции"
+          style={{ minWidth: 300 }}
+          onKeyDown={onKeyDown}
+          data={data}
+          dataKey="group_data"
+          subgroupKey="subgroup_data"
+        />
+      </div>
     </div>
   );
 }

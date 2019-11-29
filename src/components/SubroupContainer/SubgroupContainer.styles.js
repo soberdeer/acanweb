@@ -1,9 +1,10 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
-  searchContainer: {
+  subgroupContainer: {
     width: '100%',
     height: 'calc(100% - 50px)',
+
     minHeight: 300,
     display: 'flex',
     flexDirection: 'column',
@@ -11,9 +12,10 @@ export default createUseStyles({
     alignItems: 'center',
   },
 
-  groupsContainer: {
+  items: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: [50, 0],
   },
 });

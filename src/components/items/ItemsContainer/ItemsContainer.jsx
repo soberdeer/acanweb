@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import keycode from 'keycode';
-import { useParams } from 'react-router-dom';
+import cx from 'classnames';
 import Item from '../../items/Item/Item';
 import useStyles from './ItemsContainer.styles';
 
-export default function ItemsContainer({ data, small }) {
+export default function ItemsContainer({ data, small, className, ...others }) {
   const classes = useStyles();
-  const [ opacity, setOpacity ] = useState(0);
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => (setOpacity(1)), 100);
+    setTimeout(() => (
+      setOpacity(1)), 100);
   }, []);
 
   const items = data.map((item, index) => {
@@ -24,7 +24,6 @@ export default function ItemsContainer({ data, small }) {
       style={{
         opacity,
         transitionDelay: `${index * 20}ms`,
-        width: small ? '60%' : 'unset',
         display: small ? 'flex' : 'block',
         justifyContent: 'center',
       }}
@@ -32,10 +31,17 @@ export default function ItemsContainer({ data, small }) {
   });
 
   return (
-    <div className={classes.itemsContainer}>
-      <div className={classes.groupsContainer} style={{
-        flexFlow: small ? 'column nowrap' : 'row wrap',
-      }}>
+    <div className={cx(classes.itemsContainer, className)} {...others}>
+      <div
+        className={classes.groupsContainer}
+        style={{
+          flexFlow: small ? 'column nowrap' : 'row wrap',
+          display: small ? 'block' : 'flex',
+          width: small ? '70%' : '100%',
+          marginLeft: small ? 'auto' : 'unset',
+          marginRight: small ? 'auto' : 'unset',
+        }}
+      >
         {items}
       </div>
     </div>
@@ -45,10 +51,12 @@ export default function ItemsContainer({ data, small }) {
 ItemsContainer.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   small: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 ItemsContainer.defaultProps = {
   data: [],
   small: false,
+  className: null,
 };
 

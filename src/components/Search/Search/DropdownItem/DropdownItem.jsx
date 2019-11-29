@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Highlight from '../Highlight/Highlight';
@@ -11,7 +11,7 @@ export default function DropdownItem({ foundObject, onClick }) {
     <button
       className={classes.dropdownItem}
       type="button"
-      onClick={onClick}
+      onClick={() => onClick(foundObject)}
     >
       <Highlight
         match={foundObject.matches.find(match => match.key === 'name')}
@@ -33,6 +33,8 @@ export default function DropdownItem({ foundObject, onClick }) {
 DropdownItem.propTypes = {
   foundObject: PropTypes.shape({
     item: PropTypes.shape({
+      group_name: PropTypes.string,
+      subgroup_name: PropTypes.string,
       name: PropTypes.string,
       code: PropTypes.string,
     }),

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useHistory } from 'react-router-dom';
 import Fuse from 'fuse.js';
 import { Search as SearchIcon } from 'react-feather';
+import mapGroupName from '../../../utils/mapGroupName';
+import { mappedSubgroupName } from '../../../utils/constants';
 import SelectDropdown from './SelectDropdown/SelectDropdown';
 import DropdownItem from './DropdownItem/DropdownItem';
 import useStyles from './Search.styles';
@@ -11,23 +14,40 @@ export default function Search({
   disabled,
   error,
   data,
+  dataKey,
+  subgroupKey,
   ...others
 }) {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+  const history = useHistory();
 
   const itemNames = !data ?
     [] :
     data.reduce((result, current) => {
       const subdata = [];
-      current.group_data.forEach(subgroup => subgroup.subgroup_data.forEach(item => subdata.push(item)));
+      subgroupKey ?
+        current[dataKey]
+          .forEach(subgroup => subgroup[subgroupKey]
+            .forEach(item => subdata.push({
+              ...item,
+              subgroup_name: subgroup.subgroup_name,
+              group_name: current.group_name,
+            }))) :
+        current[dataKey]
+          .forEach(subgroup => subdata.push({ ...subgroup, dataKey }));
       return result.concat(subdata);
     }, []);
 
 
   function closeDropdown() {
     setShowDropdown(false);
+  }
+
+  function onClick(foundObject) {
+    const subgroupKey = Object.keys(mappedSubgroupName).find(key => mappedSubgroupName[key] === foundObject.item.subgroup_name);
+    history.push(`/${mapGroupName(foundObject.item.group_name)}/${subgroupKey}/${foundObject.item.code}`);
   }
 
   function onChange(e) {
@@ -59,7 +79,7 @@ export default function Search({
 
   const selectItems = searchTerm.length > 1 ?
     getFuse().slice(0, 10).map((value, index) => (
-      <DropdownItem key={index} foundObject={value} />)) : [];
+      <DropdownItem key={index} foundObject={value} onClick={onClick} />)) : [];
 
   return (
     <div className={classes.wrapper}>
@@ -89,25 +109,14 @@ export default function Search({
 Search.propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.bool,
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      group_name: PropTypes.string,
-      group_data: PropTypes.arrayOf(
-        PropTypes.shape({
-          subgroup_name: PropTypes.string,
-          subgroup_data: PropTypes.arrayOf(
-            PropTypes.shape({
-              name: PropTypes.string,
-              code: PropTypes.string,
-            }),
-          ),
-        }),
-      ),
-    }),
-  ),
+  data: PropTypes.array,
+  dataKey: PropTypes.string.isRequired,
+  subgroupKey: PropTypes.string,
 };
 
 Search.defaultProps = {
   disabled: false,
   error: false,
+  data: [],
+  subgroupKey: null,
 };
