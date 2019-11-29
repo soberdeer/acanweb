@@ -5,8 +5,8 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index_bundle.js',
-    publicPath: '/acanweb/',
+    filename: './acanweb/index_bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
