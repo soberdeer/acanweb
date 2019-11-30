@@ -12,11 +12,6 @@ export default function SubgroupContainer({ data }) {
   const groupName = type === 'canned' ? 'Консервы' : 'Пресервы';
   const groupData = data ? data.find(group => groupName === group.group_name).group_data : null;
 
-  function onKeyDown(e) {
-    if (keycode(e) === 'enter') {
-    }
-  }
-
   const subgroups = !groupData ?
     [] :
     groupData.map(subgroup => {

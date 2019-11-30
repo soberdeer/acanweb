@@ -41,7 +41,7 @@ export default createUseStyles({
     alignItems: 'flex-start',
 
     '& + &': {
-      marginTop: 30,
+      paddingTop: 30,
     },
   },
 

@@ -46,8 +46,10 @@ export default function Search({
   }
 
   function onClick(foundObject) {
-    const subgroupKey = Object.keys(mappedSubgroupName).find(key => mappedSubgroupName[key] === foundObject.item.subgroup_name);
-    // history.push(`/${mapGroupName(foundObject.item.group_name)}/${subgroupKey}/${foundObject.item.code}`);
+    history
+      .push(`/${mapGroupName(foundObject.item.group_name)}/${
+        Object.keys(mappedSubgroupName).find(key => mappedSubgroupName[key] === foundObject.item.subgroup_name)
+        }/${foundObject.item.code}`);
   }
 
   function onChange(e) {

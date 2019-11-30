@@ -8,7 +8,8 @@ export default createUseStyles({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 20,
+    padding: 20,
+    paddingBottom: 0,
   },
 
   char: {
