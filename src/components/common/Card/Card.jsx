@@ -18,7 +18,10 @@ export default function Card({
   const Icon = icons[icon] || icons.natural;
 
   return (
-    <div className={cx(classes.wrapper, componentClassName)} {...others}>
+    <div
+      className={cx(classes.wrapper, componentClassName)}
+      {...others}
+    >
       <Component className={cx(classes.component, className)} {...rest}>
         {icon && (
           <div className={classes.iconContainer} style={{ width: size, height: size }}>

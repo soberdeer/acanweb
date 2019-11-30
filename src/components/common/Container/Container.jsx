@@ -16,9 +16,9 @@ export default function Container({ children }) {
         <div className={classes.links}>
           <Link
             className={classes.link}
-            to="/"
+            to="/faq"
           >
-            Link
+            FAQ
           </Link>
         </div>
       </div>

@@ -24,7 +24,6 @@ export default function SearchContainer({ data }) {
           <Search
             placeholder="Введите код продукции"
             style={{ minWidth: 300 }}
-            onKeyDown={onKeyDown}
             data={data}
             dataKey="group_data"
             subgroupKey="subgroup_data"

@@ -1,7 +1,8 @@
 import { createUseStyles } from 'react-jss';
+import oc from 'open-color';
 
 export default createUseStyles({
-  container: {
+  itemContainer: {
     width: '100%',
     height: 'calc(100% - 50px)',
     minHeight: 300,
@@ -12,25 +13,40 @@ export default createUseStyles({
     overflow: 'hidden',
   },
 
-  groupsContainer: {
+  inner: {
+    width: '70%',
     display: 'flex',
-    height: '100%',
-    width: 'calc(100% - 100px)',
-    padding: [0, 50],
-    overflow: 'scroll',
-    flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center',
-
-    '& > *': {
-      margin: 20,
-      opacity: 0,
-      transition: 'opacity 200ms ease',
-    },
-
-    '& > div + div': {
-      marginLeft: 20,
-    }
-
   },
+
+  icon: {
+    marginTop: 0,
+    height: 200,
+    width: 200,
+  },
+
+  description: {
+    paddingLeft: 40,
+  },
+
+
+  subtitle: {
+    textTransform: 'uppercase',
+    fontSize: 16,
+    fontWeight: 600,
+    color: oc.gray[5],
+    paddingBottom: 10,
+  },
+
+  title: {
+    fontSize: 20,
+    color: oc.gray[7],
+    fontWeight: 600,
+    paddingBottom: 10,
+    lineHeight: '25px',
+  },
+
+  labels: {
+    paddingBottom: 10,
+  }
 });

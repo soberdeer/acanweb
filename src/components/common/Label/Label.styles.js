@@ -6,6 +6,7 @@ export default createUseStyles({
     fontSize: 10,
     borderRadius: 7,
     padding: 5,
+    width: 'fit-content',
     fontWeight: 600,
   },
 });

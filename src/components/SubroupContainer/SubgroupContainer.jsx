@@ -5,6 +5,7 @@ import { mapGroupNameFromKey } from '../../utils/mapGroupName';
 import { mappedSubgroupName } from '../../utils/constants';
 import AlphabetIndex from '../AlphabetIndex/AlphabetIndex';
 import ItemsContainer from '../items/ItemsContainer/ItemsContainer';
+import NoMatchContainer from '../NoMatchContainer/NoMatchContainer';
 import useStyles from './SubgroupContainer.styles';
 
 export default function SubgroupContainer({ data }) {
@@ -14,6 +15,11 @@ export default function SubgroupContainer({ data }) {
   const subgroupsRef = useRef(null);
   const alphabetRef = useRef(null);
   const groupName = mapGroupNameFromKey(type);
+
+  if (!groupName || !mappedSubgroupName[subtype]) {
+    return <NoMatchContainer />
+  }
+
   const groupData = data ? data.find(group => groupName === group.group_name).group_data : null;
   const subgroupData = groupData ?
     groupData.find(group => mappedSubgroupName[subtype] === group.subgroup_name).subgroup_data : null;

@@ -10,6 +10,8 @@ import SearchContainer from './components/Search/SearchContainer/SearchContainer
 import GroupContainer from './components/GroupContainer/GroupContainer';
 import SubgroupContainer from './components/SubroupContainer/SubgroupContainer';
 import ItemIndex from './components/items/ItemIndex/ItemIndex';
+import Faq from './components/Faq/Faq';
+import NoMatchContainer from './components/NoMatchContainer/NoMatchContainer';
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -27,14 +29,20 @@ export default function App() {
           <Route path="/" exact>
             <SearchContainer data={data} />
           </Route>
+          <Route path="/faq" exact>
+            <Faq />
+          </Route>
           <Route path="/:type" exact>
-            <GroupContainer data={data}/>
+            <GroupContainer data={data} />
           </Route>
           <Route path="/:type/:subtype" exact>
-            <SubgroupContainer data={data}/>
+            <SubgroupContainer data={data} />
           </Route>
           <Route path="/:type/:subtype/:code" exact>
-            <ItemIndex data={data}/>
+            <ItemIndex data={data} />
+          </Route>
+          <Route path="*">
+            <NoMatchContainer />
           </Route>
         </Switch>
       </Container>
