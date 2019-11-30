@@ -2,11 +2,18 @@ import oc from 'open-color';
 
 const darkText = 8;
 
-export const gistLink = 'https://gist.githubusercontent.com/soberdeer/dd322cd3d1fc4a3a41f6bdb09fca3fa2/raw/0208cdb5c2bdba1d9a118b40f2b89c6542a8a545/data.json';
-
 function getStyle(colorGroup) {
   return { backgroundColor: colorGroup[2], color: colorGroup[darkText] };
 }
+
+export const gistLink = 'https://gist.githubusercontent.com/soberdeer/dd322cd3d1fc4a3a41f6bdb09fca3fa2/raw/0208cdb5c2bdba1d9a118b40f2b89c6542a8a545/data.json';
+
+export const BREAKPOINTS = {
+    mobile: 576,
+    tablet: 768,
+    desktop: 992,
+    desktopXl: 1170,
+  };
 
 export const mappedSubgroupName = {
   natural: 'Натуральные',

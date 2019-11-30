@@ -14,4 +14,12 @@ export default createUseStyles({
     color: oc.gray[9],
     textAlign: 'center',
   },
+
+  small: {
+    marginTop: 0,
+
+    '& + &': {
+      marginTop: 20,
+    },
+  },
 });

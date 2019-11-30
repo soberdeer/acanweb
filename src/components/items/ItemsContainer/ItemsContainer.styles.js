@@ -25,7 +25,6 @@ export default createUseStyles({
     alignItems: 'center',
 
     '& > *': {
-      margin: 20,
       opacity: 0,
       transition: 'opacity 200ms ease',
     },

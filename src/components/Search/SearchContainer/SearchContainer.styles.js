@@ -24,5 +24,9 @@ export default createUseStyles({
     flexDirection: 'column',
     padding: [0, 50],
     paddingBottom: 50,
+  },
+
+  inputWrapper: {
+    marginTop: 20,
   }
 });

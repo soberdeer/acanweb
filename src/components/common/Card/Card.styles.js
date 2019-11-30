@@ -7,6 +7,7 @@ export default createUseStyles({
     boxShadow: '0 1px 2px 0 rgba(194,194,194,0.5)',
     borderRadius: 2,
     display: 'flex',
+    marginTop: 20,
     height: 130,
     width: 130,
     flexDirection: 'column',

@@ -37,7 +37,6 @@ export default function ItemsContainer({ data, small, className, ...others }) {
         style={{
           flexFlow: small ? 'column nowrap' : 'row wrap',
           display: small ? 'block' : 'flex',
-          width: small ? '70%' : '100%',
           marginLeft: small ? 'auto' : 'unset',
           marginRight: small ? 'auto' : 'unset',
         }}
