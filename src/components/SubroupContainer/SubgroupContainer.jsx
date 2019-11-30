@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
+import { mapGroupNameFromKey } from '../../utils/mapGroupName';
 import { mappedSubgroupName } from '../../utils/constants';
 import AlphabetIndex from '../AlphabetIndex/AlphabetIndex';
 import ItemsContainer from '../items/ItemsContainer/ItemsContainer';
@@ -12,7 +13,7 @@ export default function SubgroupContainer({ data }) {
   const [currentChar, setCurrentChar] = useState(null);
   const subgroupsRef = useRef(null);
   const alphabetRef = useRef(null);
-  const groupName = type === 'canned' ? 'Консервы' : 'Пресервы';
+  const groupName = mapGroupNameFromKey(type);
   const groupData = data ? data.find(group => groupName === group.group_name).group_data : null;
   const subgroupData = groupData ?
     groupData.find(group => mappedSubgroupName[subtype] === group.subgroup_name).subgroup_data : null;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import keycode from 'keycode';
+import {mapGroupName} from '../../../utils/mapGroupName';
 import ItemsContainer from '../../items/ItemsContainer/ItemsContainer';
 import Search from '../Search/Search';
 import useStyles from './SearchContainer.styles';
@@ -8,16 +8,11 @@ import useStyles from './SearchContainer.styles';
 export default function SearchContainer({ data }) {
   const classes = useStyles();
 
-  function onKeyDown(e) {
-    if (keycode(e) === 'enter') {
-    }
-  }
-
   const groupsData = !data ? [] :
     data.map(group => ({
       name: group.group_name,
-      key: group.group_name === 'Консервы' ? 'canned' : 'cured',
-      link: group.group_name === 'Консервы' ? '/canned' : '/cured',
+      key: mapGroupName(group.group_name),
+      link: `/${mapGroupName(group.group_name)}`,
     }));
 
   return (

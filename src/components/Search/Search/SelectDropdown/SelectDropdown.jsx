@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import { isEventKey } from 'keycode';
 import Scrollbars from 'react-custom-scrollbars';
 import useClickOutside from '../../../../utils/useClickOutside';
 import { CSSTransition } from 'react-transition-group';

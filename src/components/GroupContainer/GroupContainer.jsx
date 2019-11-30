@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import keycode from 'keycode';
 import { useParams } from 'react-router-dom';
-import ItemsContainer from '../items/ItemsContainer/ItemsContainer';
+import { mapGroupNameFromKey } from '../../utils/mapGroupName';
 import { mappedSubgroupName } from '../../utils/constants';
-import useStyles from './GroupContainer.styles';
+import ItemsContainer from '../items/ItemsContainer/ItemsContainer';
 
 export default function SubgroupContainer({ data }) {
-  const classes = useStyles();
   const { type } = useParams();
-  const groupName = type === 'canned' ? 'Консервы' : 'Пресервы';
+  const groupName = mapGroupNameFromKey(type);
   const groupData = data ? data.find(group => groupName === group.group_name).group_data : null;
 
   const subgroups = !groupData ?

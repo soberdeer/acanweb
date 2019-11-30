@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { useHistory } from 'react-router-dom';
 import Fuse from 'fuse.js';
 import { Search as SearchIcon } from 'react-feather';
-import mapGroupName from '../../../utils/mapGroupName';
+import {mapGroupName} from '../../../utils/mapGroupName';
 import { mappedSubgroupName } from '../../../utils/constants';
 import SelectDropdown from './SelectDropdown/SelectDropdown';
 import DropdownItem from './DropdownItem/DropdownItem';
