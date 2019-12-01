@@ -1,19 +1,9 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import Text from '../../typography/Text/Text';
-import Title from "../../typography/Title/Title";
+import Title from '../../typography/Title/Title';
 
 export default function WhereAmI({ classes, ...others }) {
-  const [opened, setOpened] = useState(false);
-
-  function onToggle() {
-    setOpened(!opened);
-    if (!opened) {
-      setTimeout(() => document.getElementById('import').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
-    }
-  }
-
   return (
     <div {...others}>
       <Title className={classes.mainTitle}>

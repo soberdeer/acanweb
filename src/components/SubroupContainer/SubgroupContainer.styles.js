@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import oc from 'open-color';
-import { BREAKPOINTS } from "../../utils/constants";
+import { BREAKPOINTS } from '../../utils/constants';
 
 export default createUseStyles({
   subgroupContainer: {
@@ -97,6 +97,14 @@ export default createUseStyles({
     height: 40,
     maxHeight: 40,
     maxWidth: 40,
+
+    [`@media screen and (max-width: ${BREAKPOINTS.mobile}px)`]: {
+      width: 'unset',
+      height: 'unset',
+      maxHeight: 'unset',
+      maxWidth: 'unset',
+    },
+
   }
 
 });

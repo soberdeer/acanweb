@@ -7,8 +7,8 @@ import Second from './components/Second';
 import Import from './components/Import';
 import Caviar from './components/Caviar';
 import BlackCaviar from './components/BlackCaviar';
+import WhereAmI from './components/WhereAmI';
 import useStyles from './Faq.styles';
-import WhereAmI from "./components/WhereAmI";
 
 export default function Faq() {
   const classes = useStyles();

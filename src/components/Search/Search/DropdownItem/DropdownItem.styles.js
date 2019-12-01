@@ -1,6 +1,6 @@
 import oc from 'open-color';
 import { createUseStyles } from 'react-jss';
-import { BREAKPOINTS } from "../../../../utils/constants";
+import { BREAKPOINTS } from '../../../../utils/constants';
 
 export default createUseStyles({
   dropdownItem: {

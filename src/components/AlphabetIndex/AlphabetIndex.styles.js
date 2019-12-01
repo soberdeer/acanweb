@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import oc from 'open-color';
-import { BREAKPOINTS } from "../../utils/constants";
+import { BREAKPOINTS } from '../../utils/constants';
 
 export default createUseStyles({
   alphabet: {

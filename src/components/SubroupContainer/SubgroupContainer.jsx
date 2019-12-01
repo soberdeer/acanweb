@@ -12,6 +12,7 @@ export default function SubgroupContainer({ data }) {
   const classes = useStyles();
   const { type, subtype } = useParams();
   const [currentChar, setCurrentChar] = useState(null);
+  const [alphabetHeight, setAlphabetHeight] = useState(51);
   const subgroupsRef = useRef(null);
   const alphabetRef = useRef(null);
   const groupName = mapGroupNameFromKey(type);
@@ -25,19 +26,23 @@ export default function SubgroupContainer({ data }) {
     groupData.find(group => mappedSubgroupName[subtype] === group.subgroup_name).subgroup_data : null;
   const alphabet = [];
 
+  function resizeHandler() {
+    setAlphabetHeight(alphabetRef.current.offsetHeight + 20)
+  }
+
   function scrollToChar(char) {
     document.getElementById(char).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function onScroll(event) {
-    const scrollTop = event.target.scrollTop + alphabetRef.current.offsetHeight + 50;
+    const scrollTop = event.target.scrollTop;
     const item = [...event.target.children]
       .find(child => {
         const firstChild = document.getElementById(child.id);
         const secondChild = document.getElementById(alphabet[alphabet.indexOf(child.id) + 1]);
         const secondChildBounding = secondChild ?
           secondChild.offsetTop - 21 : event.target.scrollHeight;
-        return scrollTop > firstChild.offsetTop - 70 && scrollTop < secondChildBounding
+        return scrollTop > firstChild.offsetTop - (100 + alphabetHeight) && scrollTop < secondChildBounding - 99;
       });
 
     if (item && item.id !== currentChar) {
@@ -91,7 +96,6 @@ export default function SubgroupContainer({ data }) {
     if (alphabet.length !== 0 && !currentChar) {
       setCurrentChar(alphabet[0]);
     }
-
   }, [alphabet]);
 
   useEffect(() => {
@@ -102,6 +106,18 @@ export default function SubgroupContainer({ data }) {
       subgroupsRef.current.removeEventListener('scroll', onScroll);
     };
   }, [subgroupsRef.current]);
+
+
+  useEffect(() => {
+    if (alphabetRef.current) {
+      resizeHandler();
+      window.addEventListener('resize', resizeHandler);
+    }
+    return () => {
+      window.removeEventListener('resize', resizeHandler);
+    };
+  }, [alphabetRef.current, window.innerWidth]);
+
 
   return (
     <div className={classes.subgroupContainer}>

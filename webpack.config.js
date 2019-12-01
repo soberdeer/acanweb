@@ -5,8 +5,8 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: './fishcanweb/index_bundle.js',
-    publicPath: '/',
+    filename: './index_bundle.js',
+    publicPath: '/fishcanweb/',
   },
   module: {
     rules: [

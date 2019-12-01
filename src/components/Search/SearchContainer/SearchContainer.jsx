@@ -4,8 +4,8 @@ import {mapGroupName} from '../../../utils/mapGroupName';
 import ItemsContainer from '../../items/ItemsContainer/ItemsContainer';
 import Search from '../Search/Search';
 import useStyles from './SearchContainer.styles';
-import Title from "../../typography/Title/Title";
-import Text from "../../typography/Text/Text";
+import Title from '../../typography/Title/Title';
+import Text from '../../typography/Text/Text';
 
 export default function SearchContainer({ data }) {
   const classes = useStyles();

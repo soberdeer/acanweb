@@ -1,7 +1,7 @@
 import oc from 'open-color';
 import { createUseStyles } from 'react-jss';
 import linear from '../../../utils/linear';
-import { BREAKPOINTS } from "../../../utils/constants";
+import { BREAKPOINTS } from '../../../utils/constants';
 
 export default createUseStyles({
   container: {
