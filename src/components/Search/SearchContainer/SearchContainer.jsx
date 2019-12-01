@@ -21,7 +21,7 @@ export default function SearchContainer({ data }) {
     <div className={classes.searchContainer}>
       <div className={classes.header}>
         <Title className={classes.title}>
-          fishCanWeb
+          fishCan
         </Title>
         <Text className={classes.subtitle}>
           Быстрый поиск рыбы
