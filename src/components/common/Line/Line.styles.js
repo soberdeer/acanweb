@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+import oc from 'open-color';
+import { BREAKPOINTS } from '../../../utils/constants';
 
 export default createUseStyles({
   wrapper: {
@@ -19,7 +21,21 @@ export default createUseStyles({
     backgroundColor: 'transparent',
     display: 'flex',
     padding: [ 0, 20 ],
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
+
+
+    [`@media screen and (max-width: ${BREAKPOINTS.mobile}px)`]: {
+      padding: [0, 10],
+    },
   },
+
+  code: {
+    display: 'flex',
+    paddingTop: [0, '!important'],
+    fontWeight: 600,
+    color: oc.gray[5],
+    marginLeft: 20,
+    alignItems: 'center',
+  }
 });

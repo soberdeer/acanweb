@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import oc from 'open-color';
+import { BREAKPOINTS } from "../../../utils/constants";
 
 const color = oc.gray[5];
 
@@ -10,6 +11,15 @@ export default createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+
+
+    [`@media screen and (max-width: ${BREAKPOINTS.tablet}px) and (min-width: ${BREAKPOINTS.mobile + 1}px)`]: {
+      width: '75%',
+    },
+
+    [`@media screen and (max-width: ${BREAKPOINTS.mobile}px)`]: {
+      width: '100%',
+    },
   },
 
   title: {
@@ -20,6 +30,7 @@ export default createUseStyles({
 
   subtitle: {
     fontSize: 18,
+    textAlign: 'center',
     color,
     fontWeight: 600,
     padding: [20, 0],

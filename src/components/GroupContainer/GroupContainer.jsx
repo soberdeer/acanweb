@@ -20,6 +20,7 @@ export default function SubgroupContainer({ data }) {
     [] :
     groupData.map(subgroup => {
       const subgroupKey = Object.keys(mappedSubgroupName).find(key => mappedSubgroupName[key] === subgroup.subgroup_name);
+
       return {
         name: subgroup.subgroup_name,
         key: subgroupKey,

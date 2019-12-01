@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft } from 'react-feather';
 import { mapGroupNameFromKey } from '../../../utils/mapGroupName';
 import { mappedSubgroupName } from '../../../utils/constants';
 import NoMatchContainer from '../../NoMatchContainer/NoMatchContainer';
 import Label from '../../common/Label/Label';
 import Card from '../../common/Card/Card';
+import Title from '../../typography/Title/Title';
 import useStyles from './ItemIndex.styles';
 
 export default function ItemIndex({ data }) {
@@ -30,8 +32,11 @@ export default function ItemIndex({ data }) {
   }
 
   return (
-
     <div className={classes.itemContainer}>
+      <Link to={`/${type}/${subtype}`} className={classes.backContainer}>
+        <ArrowLeft size={20} className={classes.arrow} />
+        <Title className={classes.backText}>Вернуться к списку</Title>
+      </Link>
       <div className={classes.inner}>
         <div className={classes.image}>
           <Card icon={subtype} size={150} className={classes.icon} />
@@ -42,9 +47,9 @@ export default function ItemIndex({ data }) {
               {subgroupName}
             </Label>
           </div>
-          <div className={classes.title}>
+          <Title noHyphens>
             {itemData && itemData.name}
-          </div>
+          </Title>
           <div className={classes.subtitle}>
             {itemData && itemData.code}
           </div>

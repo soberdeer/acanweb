@@ -1,45 +1,24 @@
 import { createUseStyles } from 'react-jss';
 import oc from 'open-color';
+import { BREAKPOINTS } from '../../utils/constants';
 
 export default createUseStyles({
-  faqContainer: {
-    width: '100%',
-    height: 'calc(100% - 50px)',
-    display: 'flex',
-    overflow: 'hidden',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
   faq: {
-    padding: [30, '15%'],
-    overflow: 'scroll',
+    padding: [20, '15%'],
+    display: 'flex',
+    flexDirection: 'column',
+
+    [`@media screen and (max-width: ${BREAKPOINTS.mobile}px)`]: {
+      padding: 20,
+    },
   },
 
-  title: {
-    fontSize: 24,
-    fontWeight: 600,
-    color: oc.gray[7],
-    paddingBottom: 20,
+  mainTitle: {
+    paddingTop: 60,
   },
 
   description: {
-    color: oc.gray[7],
-
-    '& *': {
-      fontSize: 16,
-    },
-
-    '& span': {
-      lineHeight: '24px',
-    },
-  },
-
-  link: {
-    color: oc.blue[5],
-    textDecoration: 'none',
-    cursor: 'pointer',
+    '& > *': { paddingTop: 20, }
   },
 
   varTitle: {
@@ -91,10 +70,24 @@ export default createUseStyles({
     fontSize: 20,
     fontWeight: 600,
     cursor: 'pointer',
-    color: oc.blue[5]
+    textAlign: 'left',
+    color: oc.blue[5],
+
+    [`@media screen and (max-width: ${BREAKPOINTS.tablet}px)`]: {
+      fontSize: 18,
+    },
   },
 
   topic: {
     paddingBottom: 10,
+    paddingTop: 20,
+    paddingLeft: 24,
+    paddingRight: 24,
+
+
+    [`@media screen and (max-width: ${BREAKPOINTS.tablet}px)`]: {
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
   }
 });

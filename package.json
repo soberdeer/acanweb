@@ -1,8 +1,8 @@
 {
-  "name": "acanweb.github.io",
+  "name": "fishcanweb.github.io",
   "version": "1.0.0",
   "description": "Search for truth of canned fish",
-  "homepage": "https://soberdeer.github.io/acanweb/",
+  "homepage": "https://soberdeer.github.io/fishcanweb/",
   "main": "index.js",
   "scripts": {
     "test": "yarn test",

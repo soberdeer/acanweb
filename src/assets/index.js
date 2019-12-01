@@ -22,6 +22,8 @@ import Spice from './Spice';
 import Tomato from './Tomato';
 import Veg from './Veg';
 
+import Github from './Github';
+
 export default {
   animal: Animal,
   canned: Canned,
@@ -33,6 +35,7 @@ export default {
   filled: Filled,
   'export': Export,
   garnish: Garnish,
+  github: Github,
   ground: Ground,
   liver: Liver,
   natural: Natural,

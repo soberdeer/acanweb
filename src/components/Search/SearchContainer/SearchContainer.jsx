@@ -4,6 +4,8 @@ import {mapGroupName} from '../../../utils/mapGroupName';
 import ItemsContainer from '../../items/ItemsContainer/ItemsContainer';
 import Search from '../Search/Search';
 import useStyles from './SearchContainer.styles';
+import Title from "../../typography/Title/Title";
+import Text from "../../typography/Text/Text";
 
 export default function SearchContainer({ data }) {
   const classes = useStyles();
@@ -17,13 +19,20 @@ export default function SearchContainer({ data }) {
 
   return (
     <div className={classes.searchContainer}>
+      <div className={classes.header}>
+        <Title className={classes.title}>
+          fishCanWeb
+        </Title>
+        <Text className={classes.subtitle}>
+          Быстрый поиск рыбы
+        </Text>
+      </div>
       <div className={classes.inner}>
         <ItemsContainer data={groupsData} className={classes.groupsContainer} />
 
         <div className={classes.inputWrapper}>
           <Search
             placeholder="Введите код продукции"
-            style={{ minWidth: 300 }}
             data={data}
             dataKey="group_data"
             subgroupKey="subgroup_data"

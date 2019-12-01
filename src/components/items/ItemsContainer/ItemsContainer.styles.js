@@ -1,25 +1,21 @@
 import { createUseStyles } from 'react-jss';
+import { BREAKPOINTS } from "../../../utils/constants";
 
 export default createUseStyles({
   itemsContainer: {
     width: '100%',
-    height: 'calc(100% - 50px)',
-    minHeight: 300,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden',
     marginLeft: 'auto',
     marginRight: 'auto',
   },
 
   groupsContainer: {
     display: 'flex',
-    height: '100%',
-    width: 'calc(100% - 100px)',
-    padding: [0, 50],
-    overflow: 'scroll',
+    width: '100%',
+    padding: [30, 0],
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,7 +27,6 @@ export default createUseStyles({
 
     '& > div + div': {
       marginLeft: 20,
-    }
-
+    },
   },
 });

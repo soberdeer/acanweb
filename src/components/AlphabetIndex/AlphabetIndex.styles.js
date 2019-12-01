@@ -1,14 +1,15 @@
 import { createUseStyles } from 'react-jss';
 import oc from 'open-color';
+import { BREAKPOINTS } from "../../utils/constants";
 
 export default createUseStyles({
   alphabet: {
-    width: '100%',
+    width: 'calc(100% - 40px)',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: 10,
     paddingBottom: 0,
   },
 
@@ -19,15 +20,24 @@ export default createUseStyles({
     border: 0,
     backgroundColor: 'transparent',
     padding: 5,
+    margin: 5,
     fontSize: 18,
     fontWeight: 600,
-    margin: 0,
     cursor: 'pointer',
     outline: 'none',
+    transition: 'color 200ms ease',
 
-    '& + &': {
-      marginLeft: 10,
-    }
+    '&:hover': {
+      color: oc.gray[7],
+    },
+
+    [`@media screen and (max-width: ${BREAKPOINTS.tablet}px)`]: {
+      fontSize: 16,
+    },
+
+    [`@media screen and (max-width: ${BREAKPOINTS.mobile + 60}px)`]: {
+      padding: 0,
+    },
   },
 
   current: {

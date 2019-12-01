@@ -1,6 +1,6 @@
 {
-    "name": "aCanWeb",
-    "short_name": "aCanWeb fish search",
+    "name": "fishCanWeb",
+    "short_name": "fishCanWeb fish search",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "./acanweb/",
+    "start_url": "./fishcanweb/",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"

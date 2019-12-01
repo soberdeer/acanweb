@@ -26,6 +26,7 @@ export default createUseStyles({
     outline: 0,
     transition: 'border-color 100ms ease, border-bottom-right-radius 100ms ease, border-bottom-left-radius 100ms ease',
     resize: 'none',
+    minWidth: 260,
     minHeight: 34,
     height: 34,
     textAlign: 'left',

@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import { BREAKPOINTS } from "../../../utils/constants";
 
 export default createUseStyles({
   wrapper: {
@@ -7,12 +8,18 @@ export default createUseStyles({
     boxShadow: '0 1px 2px 0 rgba(194,194,194,0.5)',
     borderRadius: 2,
     display: 'flex',
-    marginTop: 20,
     height: 130,
     width: 130,
     flexDirection: 'column',
     justifyContent: 'center',
     padding: 10,
+
+
+    [`@media screen and (max-width: ${BREAKPOINTS.mobile}px)`]: {
+      width: 100,
+      height: 100,
+    },
+
   },
 
   component: {

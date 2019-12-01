@@ -1,12 +1,14 @@
 import oc from 'open-color';
 import { createUseStyles } from 'react-jss';
 import linear from '../../../utils/linear';
+import { BREAKPOINTS } from "../../../utils/constants";
 
 export default createUseStyles({
   container: {
     backgroundColor: oc.gray[0],
     width: '100vw',
     height: '100vh',
+    overflow: 'hidden',
   },
 
   nav: {
@@ -30,7 +32,36 @@ export default createUseStyles({
     textDecoration: 'none',
     cursor: 'pointer',
     color: 'white',
+    fill: 'white',
     fontWeight: 600,
     letterSpacing: 1.2,
+    display: 'flex',
+    transition: 'color 200ms ease, fill 200ms ease',
+
+    '& + &': {
+      marginLeft: 20,
+    },
+
+    '&:hover': {
+      color: oc.teal[1],
+      fill: oc.teal[1]
+    },
+  },
+
+  content: {
+    width: '100%',
+    height: 'calc(100% - 50px)',
+    overflow: 'scroll',
+  },
+
+  innerContent: {
+    maxWidth: 992,
+    margin: [0, 'auto'],
+    display: 'flex',
+    alignContent: 'flex-start',
+
+    [`@media screen and (max-width: ${BREAKPOINTS.desktop}px)`]: {
+      margin: 'unset',
+    },
   },
 });
