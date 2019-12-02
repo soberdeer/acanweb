@@ -6,7 +6,7 @@ function getStyle(colorGroup) {
   return { backgroundColor: colorGroup[2], color: colorGroup[darkText] };
 }
 
-export const gistLink = 'https://gist.githubusercontent.com/soberdeer/dd322cd3d1fc4a3a41f6bdb09fca3fa2/raw/0208cdb5c2bdba1d9a118b40f2b89c6542a8a545/data.json';
+export const gistLink = 'https://gist.githubusercontent.com/soberdeer/dd322cd3d1fc4a3a41f6bdb09fca3fa2/raw/ba20165a6c2e2b97eda2b1c152411e8a31778a51/data.json';
 
 export const BREAKPOINTS = {
     mobile: 576,
